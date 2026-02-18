@@ -1,0 +1,70 @@
+{
+  "description": "Canonical reference values for Genesis PROV 5a PFAS Remediation claim verification",
+  "version": "1.0.0",
+  "date": "2026-02-18",
+  "source": "PROV_5_SMART_MATTER/03_DATA_ARTIFACTS/pfas_results/pfas_dft_complete_summary.json",
+  "theory_level": "B3LYP/6-31G*/D3(BJ)/CPCM",
+
+  "thresholds": {
+    "irreversibility_threshold_kJ_mol": -80.0,
+    "gac_baseline_kJ_mol": -45.0,
+    "ix_resin_baseline_kJ_mol": -50.0,
+    "epa_mcl_pfoa_ppt": 4.0,
+    "epa_mcl_pfos_ppt": 4.0
+  },
+
+  "lead_compound": {
+    "id": "FC-003",
+    "name": "Bis-TMA-C8-F8",
+    "pfoa_binding_kJ_mol": -121.0,
+    "pfos_binding_kJ_mol": -127.99,
+    "irreversibility_ratio": 1.51
+  },
+
+  "best_compound": {
+    "id": "FC-015",
+    "name": "Perfluoro-Cryptand-Max",
+    "pfoa_binding_kJ_mol": -278.97,
+    "pfos_binding_kJ_mol": -285.96,
+    "irreversibility_ratio": 3.49
+  },
+
+  "campaign": {
+    "total_candidates": 15,
+    "candidates_exceeding_irreversibility": 15,
+    "candidates_beating_gac": 15,
+    "best_pfoa_binding_kJ_mol": -278.97,
+    "worst_pfoa_binding_kJ_mol": -92.04,
+    "mean_pfoa_binding_kJ_mol": -148.08,
+    "scaffold_library_size": 730
+  },
+
+  "dft_results": [
+    {"id": "FC-001", "pfoa_kJ": -97.00, "pfos_kJ": -103.99, "ratio": 1.21},
+    {"id": "FC-002", "pfoa_kJ": -109.05, "pfos_kJ": -116.04, "ratio": 1.36},
+    {"id": "FC-003", "pfoa_kJ": -121.00, "pfos_kJ": -127.99, "ratio": 1.51},
+    {"id": "FC-004", "pfoa_kJ": -133.05, "pfos_kJ": -140.04, "ratio": 1.66},
+    {"id": "FC-005", "pfoa_kJ": -106.52, "pfos_kJ": -113.51, "ratio": 1.33},
+    {"id": "FC-006", "pfoa_kJ": -92.04, "pfos_kJ": -99.03, "ratio": 1.15},
+    {"id": "FC-007", "pfoa_kJ": -197.66, "pfos_kJ": -204.65, "ratio": 2.47},
+    {"id": "FC-008", "pfoa_kJ": -120.39, "pfos_kJ": -127.38, "ratio": 1.51},
+    {"id": "FC-009", "pfoa_kJ": -112.90, "pfos_kJ": -119.89, "ratio": 1.41},
+    {"id": "FC-010", "pfoa_kJ": -212.95, "pfos_kJ": -219.94, "ratio": 2.66},
+    {"id": "FC-011", "pfoa_kJ": -264.19, "pfos_kJ": -271.08, "ratio": 3.30},
+    {"id": "FC-012", "pfoa_kJ": -123.73, "pfos_kJ": -130.72, "ratio": 1.55},
+    {"id": "FC-013", "pfoa_kJ": -128.19, "pfos_kJ": -135.18, "ratio": 1.60},
+    {"id": "FC-014", "pfoa_kJ": -123.63, "pfos_kJ": -130.62, "ratio": 1.55},
+    {"id": "FC-015", "pfoa_kJ": -278.97, "pfos_kJ": -285.96, "ratio": 3.49}
+  ],
+
+  "langmuir": {
+    "fluorocatcher_K_bind_L_per_mol": 1e17,
+    "gac_K_bind_L_per_mol": 1e8
+  },
+
+  "tolerances": {
+    "binding_energy_kJ_mol": 0.5,
+    "ratio": 0.01,
+    "description": "Acceptable floating-point tolerance for verification comparisons"
+  }
+}

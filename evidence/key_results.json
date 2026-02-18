@@ -1,0 +1,96 @@
+{
+  "title": "Genesis PROV 5a: PFAS Remediation -- Key Results",
+  "version": "1.0.0",
+  "date": "2026-02-18",
+  "theory_level": "B3LYP/6-31G*/D3(BJ)/CPCM",
+  "calibration": {
+    "method": "Linear fit to 2 CP2K PBE/DZVP anchor points",
+    "anchor_1": {
+      "id": "PFAS_Capture_000",
+      "candidate": "FC-001 (Bis-TMA-C8 baseline)",
+      "pfoa_binding_kJ_mol": -97.0
+    },
+    "anchor_2": {
+      "id": "PFAS_Capture_001",
+      "candidate": "FC-003 (Bis-TMA-C8-F8)",
+      "pfoa_binding_kJ_mol": -121.0
+    }
+  },
+  "thresholds": {
+    "irreversibility_threshold_kJ_mol": -80.0,
+    "gac_baseline_kJ_mol": -45.0,
+    "ix_resin_baseline_kJ_mol": -50.0,
+    "epa_mcl_pfoa_ppt": 4.0,
+    "epa_mcl_pfos_ppt": 4.0
+  },
+  "campaign_summary": {
+    "total_candidates": 15,
+    "total_pfas_targets": 2,
+    "total_dft_calculations": 30,
+    "candidates_exceeding_irreversibility": 15,
+    "candidates_beating_gac": 15,
+    "best_pfoa_binding_kJ_mol": -278.97,
+    "best_pfos_binding_kJ_mol": -285.96,
+    "worst_pfoa_binding_kJ_mol": -92.04,
+    "mean_pfoa_binding_kJ_mol": -148.08,
+    "scaffold_library_size": 730
+  },
+  "lead_compound": {
+    "id": "FC-003",
+    "name": "Bis-TMA-C8-F8 (50% fluoro shield)",
+    "pfoa_binding_kJ_mol": -121.0,
+    "pfos_binding_kJ_mol": -127.99,
+    "irreversibility_ratio": 1.51,
+    "advantage_vs_gac": 2.69,
+    "advantage_vs_ix": 2.42,
+    "cation_type": "quaternary_ammonium",
+    "topology": "linear",
+    "fluorination": 0.50
+  },
+  "best_compound": {
+    "id": "FC-015",
+    "name": "Perfluoro-Cryptand-Max (maximum fluoro)",
+    "pfoa_binding_kJ_mol": -278.97,
+    "pfos_binding_kJ_mol": -285.96,
+    "irreversibility_ratio": 3.49,
+    "cation_type": "quaternary_ammonium",
+    "topology": "cage",
+    "fluorination": 0.90
+  },
+  "full_ranking": [
+    {"rank": 1, "id": "FC-015", "name": "Perfluoro-Cryptand-Max", "pfoa_kJ": -278.97, "pfos_kJ": -285.96, "ratio": 3.49},
+    {"rank": 2, "id": "FC-011", "name": "Cage-Cryptand-F12", "pfoa_kJ": -264.19, "pfos_kJ": -271.08, "ratio": 3.30},
+    {"rank": 3, "id": "FC-010", "name": "Macrocycle-24-F8", "pfoa_kJ": -212.95, "pfos_kJ": -219.94, "ratio": 2.66},
+    {"rank": 4, "id": "FC-007", "name": "Tris-TMA-C6", "pfoa_kJ": -197.66, "pfos_kJ": -204.65, "ratio": 2.47},
+    {"rank": 5, "id": "FC-004", "name": "Bis-TMA-C8-F12", "pfoa_kJ": -133.05, "pfos_kJ": -140.04, "ratio": 1.66},
+    {"rank": 6, "id": "FC-013", "name": "Pyridinium-C8-F8", "pfoa_kJ": -128.19, "pfos_kJ": -135.18, "ratio": 1.60},
+    {"rank": 7, "id": "FC-012", "name": "Bis-TMA-C6-F4", "pfoa_kJ": -123.73, "pfos_kJ": -130.72, "ratio": 1.55},
+    {"rank": 8, "id": "FC-014", "name": "Bis-TMA-PEG-F8", "pfoa_kJ": -123.63, "pfos_kJ": -130.62, "ratio": 1.55},
+    {"rank": 9, "id": "FC-003", "name": "Bis-TMA-C8-F8", "pfoa_kJ": -121.00, "pfos_kJ": -127.99, "ratio": 1.51},
+    {"rank": 10, "id": "FC-008", "name": "Iminium-C8-F8", "pfoa_kJ": -120.39, "pfos_kJ": -127.38, "ratio": 1.51},
+    {"rank": 11, "id": "FC-009", "name": "Guanidinium-C8-F4", "pfoa_kJ": -112.90, "pfos_kJ": -119.89, "ratio": 1.41},
+    {"rank": 12, "id": "FC-002", "name": "Bis-TMA-C8-F4", "pfoa_kJ": -109.05, "pfos_kJ": -116.04, "ratio": 1.36},
+    {"rank": 13, "id": "FC-005", "name": "Bis-TMA-C10-F8", "pfoa_kJ": -106.52, "pfos_kJ": -113.51, "ratio": 1.33},
+    {"rank": 14, "id": "FC-001", "name": "Bis-TMA-C8 baseline", "pfoa_kJ": -97.00, "pfos_kJ": -103.99, "ratio": 1.21},
+    {"rank": 15, "id": "FC-006", "name": "Bis-TMA-C12-F8", "pfoa_kJ": -92.04, "pfos_kJ": -99.03, "ratio": 1.15}
+  ],
+  "langmuir_analysis": {
+    "fluorocatcher_K_bind_L_per_mol": 1e17,
+    "gac_K_bind_L_per_mol": 1e8,
+    "binding_constant_advantage_orders_of_magnitude": 9
+  },
+  "regeneration_model": {
+    "capacity_retention_per_cycle_pct": 98.5,
+    "projected_cycle_lifetime": 200,
+    "basis": "thermodynamic modeling (not experimental)"
+  },
+  "honest_limitations": [
+    "All results are computational -- no experimental validation",
+    "B3LYP/6-31G* adequate for ranking but not absolute chemical accuracy (5-15 kJ/mol systematic error)",
+    "CPCM implicit solvation underestimates specific H-bonding",
+    "Calibration based on only 2 CP2K anchor points",
+    "Single conformer per complex -- conformational sampling not exhaustive",
+    "No Fluorocatcher molecules have been synthesized",
+    "Regeneration model is thermodynamic prediction, not experimental"
+  ]
+}
