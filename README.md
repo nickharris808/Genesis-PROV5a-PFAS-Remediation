@@ -52,7 +52,7 @@ The Genesis Platform has computationally discovered and validated a new class of
 
 | Metric | Value | Significance |
 |--------|-------|-------------|
-| **Lead compound binding energy** | **-121 kJ/mol** (FC-003) | 2.7x stronger than activated carbon |
+| **Lead compound binding energy** | **-121 kJ/mol** (FC-003, vacuum DFT; aqueous solvation reduces by ~50-70%) | 2.7x stronger than activated carbon (vacuum comparison) |
 | **Best compound binding energy** | **-278.97 kJ/mol** (FC-015) | 6.2x stronger than activated carbon |
 | **Irreversibility ratio (lead)** | **1.51** | Exceeds 1.5x safety margin |
 | **Irreversibility ratio (best)** | **3.49** | 3.5x the permanent capture threshold |
