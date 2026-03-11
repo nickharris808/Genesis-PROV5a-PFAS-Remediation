@@ -553,7 +553,7 @@ The machine learning surrogate model (v8) enables rapid pre-screening of all 730
 | Physicochemical descriptors | 200 (MW, LogP, TPSA, rotatable bonds, charge, etc.) |
 | Metal/target properties | 5 (ionic radius, charge density, hydration enthalpy, etc.) |
 | Total features | 1,212 |
-| Training data | 58 verified DFT + 200+ expanded calculations |
+| Training data | 58 verified CP2K + 166 DFT-calibrated estimates (physics-model extrapolations) |
 | Cross-validation | Standard 5-fold + Ligand-out GroupKFold + Metal-out GroupKFold |
 | Key validation | Ligand differentiation proven (different predictions for different ligands on same metal) |
 
@@ -830,7 +830,7 @@ This platform convergence means that a single investment in the Genesis molecula
 
 The verification infrastructure is consistent across all PROV 5 modules:
 
-- **DFT calculations:** 273+ total across all modules (58 verified REE + 200 expanded + 15 PFAS)
+- **DFT calculations:** 239 total across all modules (58 verified CP2K REE + 166 DFT-calibrated estimates + 15 PFAS)
 - **PMF validation:** 10 ns/window umbrella sampling (publication standard per Roux & Berneche 2002)
 - **ML model:** v8 with molecular fingerprints and proven ligand differentiation
 - **DoD compliance:** CMMC Level 3 readiness at 82%, with full POA&M documented

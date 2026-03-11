@@ -42,7 +42,7 @@ The following claim families from the PROV 5 Smart Matter provisional patent are
 
 **Type:** Method
 **Strength:** STRONG
-**Evidence Base:** ML surrogate v8 with molecular fingerprints, 200+ DFT training set
+**Evidence Base:** ML surrogate v8 with molecular fingerprints, 166 DFT-calibrated estimates (58 verified CP2K + physics-model extrapolations)
 
 | Claim | Scope | Type |
 |-------|-------|------|
