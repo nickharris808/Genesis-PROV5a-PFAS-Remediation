@@ -16,7 +16,7 @@ The following claim families from the PROV 5 Smart Matter provisional patent are
 
 **Type:** Composition of Matter
 **Strength:** STRONG (15/15 PFAS binding estimates complete)
-**Evidence Base:** 15 analytical Coulomb+LJ+Born binding energy estimates calibrated against 2 CP2K anchor points (not DFT -- see HONEST_DISCLOSURES.md)
+**Evidence Base:** 15 analytical Coulomb+LJ+Born binding energy estimates calibrated against 2 CP2K anchor points (not DFT -- see HONEST_DISCLOSURES_5a.md)
 
 | Claim | Scope | Type |
 |-------|-------|------|
