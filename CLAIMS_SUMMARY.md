@@ -48,7 +48,7 @@ The following claim families from the PROV 5 Smart Matter provisional patent are
 |-------|-------|------|
 | 39 | Method for computational design of selective molecular sorbents using combinatorial scaffold generation + DFT validation + ML screening | Independent |
 | 40 | Scaffold generation from cation type, spacer length, fluorination level, and topology combinatorial space | Dependent on 39 |
-| 41 | DFT validation at B3LYP/6-31G* or higher with dispersion correction | Dependent on 39 |
+| 41 | Computational validation using analytical Coulomb+LJ+Born model calibrated to CP2K anchors (NOT quantum DFT despite original label) | Dependent on 39 |
 | 42 | ML surrogate model using molecular fingerprints (ECFP4, MACCS) for binding energy prediction | Dependent on 39 |
 | 43 | Active learning loop: ML prediction, DFT validation of top candidates, model retraining | Dependent on 39 |
 | 44 | Ligand-out cross-validation for molecular generalization | Dependent on 42 |

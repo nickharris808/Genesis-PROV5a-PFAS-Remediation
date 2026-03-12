@@ -7,12 +7,12 @@
 
 ## 1. All Results Are Computational -- No Experimental Validation
 
-Every binding energy, isotherm prediction, regeneration estimate, and performance claim in this repository is derived from computational chemistry (density functional theory) and thermodynamic modeling. No physical experiment has been conducted.
+Every binding energy, isotherm prediction, regeneration estimate, and performance claim in this repository is derived from computational modeling. For PFAS binding, the method is an analytical Coulomb+LJ+Born model (classical physics), NOT quantum DFT -- see Section 2 below. Only 2 of the 15 PFAS binding energies come from actual quantum DFT (CP2K). No physical experiment has been conducted.
 
 Specifically:
 
-- **No Fluorocatcher molecules have been synthesized.** The 730 scaffolds and 15 DFT-validated candidates exist only as computational models.
-- **No experimental binding isotherms have been measured.** The Langmuir isotherm analysis (K_bind = 10^17 L/mol) is computed from DFT binding energies using standard thermodynamic relationships, not from experimental adsorption data.
+- **No Fluorocatcher molecules have been synthesized.** The 730 scaffolds and 15 computationally-estimated candidates exist only as computational models.
+- **No experimental binding isotherms have been measured.** The Langmuir isotherm analysis (K_bind = 10^17 L/mol) is computed from analytical binding energy estimates using standard thermodynamic relationships, not from experimental adsorption data.
 - **No filtration tests have been conducted.** No water has been passed through any Fluorocatcher-based filter medium. Claims about EPA MCL compliance at 4 ppt are thermodynamic predictions, not measured performance.
 - **No pilot-scale or field tests exist.** The application scenarios described (municipal water treatment, DoD site remediation, industrial PFAS capture) are projected use cases based on computed performance, not demonstrated installations.
 
@@ -20,29 +20,33 @@ Specifically:
 
 ---
 
-## 2. DFT Method Limitations
+## 2. Binding Energy Method: Analytical Coulomb+LJ+Born Model (NOT Quantum DFT)
 
-### Level of Theory: B3LYP/6-31G*/D3(BJ)/CPCM
+### CRITICAL CORRECTION: The PFAS binding energies are NOT computed using quantum DFT.
 
-This is a mid-tier computational chemistry method. It is widely used and well-validated for organic molecular systems, but it has known limitations:
+The 15/15 PFAS binding energy estimates use an **analytical Coulomb+Lennard-Jones+Born model** -- a classical physics approximation, not an electronic structure calculation. No quantum mechanical calculation (B3LYP, HF, or any other level of theory) is performed for the 13 expanded candidates (PFAS_Capture_002 through _014). The method computes:
 
-- **B3LYP functional:** Systematic errors of 5-15 kJ/mol for non-covalent interactions. The functional tends to slightly underestimate dispersion interactions even with D3 correction. For our application, this means reported binding energies may be slightly less negative (weaker) than the true values, which would make our claims conservative.
+- **Coulombic interaction** between cationic Fluorocatcher centers and anionic PFAS head groups (classical electrostatics with effective dielectric screening)
+- **Lennard-Jones van der Waals** terms for fluorine-fluorine contacts (using OPLS-AA parameters, not quantum-derived)
+- **Born desolvation penalty** for partial stripping of hydration shells (continuum solvation approximation)
+- **Empirical dispersion** correction term
 
-- **6-31G* basis set:** A medium-sized Pople basis set with polarization functions on heavy atoms. Larger basis sets (e.g., 6-311++G(2d,2p) or cc-pVTZ) would reduce basis set superposition error and improve accuracy, but at substantially higher computational cost.
+These four classical terms are summed and then **linearly calibrated** against 2 CP2K anchor points (PFAS_Capture_000 at -97 kJ/mol and PFAS_Capture_001 at -121 kJ/mol). The calibration maps the raw analytical energies to a scale anchored by actual DFT calculations, but the underlying physics is classical, not quantum mechanical.
 
-- **D3(BJ) dispersion correction:** Essential for this application because fluorine-fluorine van der Waals interactions contribute substantially to total binding energy. Without D3, DFT would grossly underestimate Fluorocatcher performance. The D3(BJ) parameterization is well-validated for this class of interaction.
+### What this means for accuracy
 
-- **CPCM implicit solvation:** Models the aqueous environment as a dielectric continuum. This captures the bulk electrostatic effect of water but does not model specific hydrogen bonding between water molecules and the Fluorocatcher-PFAS complex. At the binding interface, explicit water molecules may stabilize or destabilize the complex in ways not captured by CPCM.
+- The method is appropriate for **relative ranking** of candidates (which Fluorocatcher binds more strongly)
+- It is NOT appropriate for **absolute binding energy prediction** -- the 2-point linear calibration has no degrees of freedom for error estimation
+- Molecules very different from the two anchors (e.g., cage/cryptand topologies FC-010, FC-011, FC-015) may have larger systematic errors
+- The method does not capture quantum effects such as charge transfer, orbital interactions, or explicit electron correlation
 
-### Calibration Limitations
+### Why this matters
 
-The 15/15 PFAS DFT campaign uses a calibrated B3LYP model anchored to 2 higher-level CP2K reference calculations:
-- Anchor 1: FC-001 (Bis-TMA-C8 baseline) at -97 kJ/mol
-- Anchor 2: FC-003 (Bis-TMA-C8-F8) at -121 kJ/mol
+Previous versions of this repository labeled the method as "B3LYP/6-31G*/D3(BJ)/CPCM" in output JSON files, which implied quantum DFT calculations were performed. This was misleading. The JSON files have been corrected to show "analytical_Coulomb_LJ_Born" as the method. The Python code (`complete_pfas_dft.py`) contains a transparency banner explaining this correction.
 
-A linear calibration fit with only 2 anchor points has no degrees of freedom for error estimation. The calibration improves absolute accuracy for molecules similar to the anchors but may introduce systematic errors for molecules with very different architectures (e.g., the cage/cryptand topologies FC-010, FC-011, FC-015).
+Only 2 of the 15 PFAS binding energies come from actual quantum DFT (CP2K PBE/DZVP). The other 13 are analytical estimates.
 
-**What would improve this:** Running 5-10 additional CP2K reference calculations spanning the full range of Fluorocatcher architectures. Alternatively, running coupled-cluster CCSD(T) calculations on small model systems to establish benchmark binding energies.
+**What would improve this:** Running actual quantum DFT (e.g., B3LYP/6-31G* or higher) on all 15 Fluorocatcher-PFAS complexes, or running explicit-solvent molecular dynamics with free energy perturbation methods.
 
 ---
 
@@ -82,7 +86,7 @@ These scaffolds are data structures in a computational library. None have been s
 
 ## 5. Conformational Sampling Limitations
 
-Each DFT binding energy calculation uses a single low-energy conformer per Fluorocatcher-PFAS complex. This is a common approximation in computational screening but has limitations:
+Each binding energy estimate uses a single low-energy conformer per Fluorocatcher-PFAS complex. This is a common approximation in computational screening but has limitations:
 
 - Flexible molecules (especially those with C10 or C12 spacers) can adopt multiple binding poses
 - The true binding free energy is a Boltzmann-weighted average over all accessible conformations
@@ -126,7 +130,7 @@ The $20-40 billion PFAS remediation market estimate and $50 billion+ municipal c
 | We Claim | We Do NOT Claim |
 |----------|-----------------|
 | Fluorocatchers computationally bind PFAS 2-6x stronger than GAC | Fluorocatchers have been experimentally proven to capture PFAS |
-| 15/15 DFT calculations converged with binding > -80 kJ/mol | Binding energies are accurate to chemical accuracy |
+| 15/15 analytical binding estimates exceed -80 kJ/mol (only 2 are actual DFT) | Binding energies are accurate to chemical accuracy |
 | 730 scaffolds computationally designed | 730 scaffolds synthesized or tested |
 | Irreversibility ratio > 1.5 for lead compound | Permanent capture demonstrated in filtration test |
 | Compatible design with existing infrastructure | Drop-in replacement tested in actual water treatment plant |

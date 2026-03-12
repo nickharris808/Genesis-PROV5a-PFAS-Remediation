@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "date": "2026-02-18",
   "source": "PROV_5_SMART_MATTER/03_DATA_ARTIFACTS/pfas_results/pfas_dft_complete_summary.json",
-  "theory_level": "B3LYP/6-31G*/D3(BJ)/CPCM",
+  "theory_level": "Analytical Coulomb+LJ+Born model calibrated to 2 CP2K anchors (NOT B3LYP/6-31G*)",
 
   "thresholds": {
     "irreversibility_threshold_kJ_mol": -80.0,
