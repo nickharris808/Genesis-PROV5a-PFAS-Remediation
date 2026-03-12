@@ -2,7 +2,7 @@
 
 ![Status: Published](https://img.shields.io/badge/Status-Published-brightgreen)
 ![Claims: ~95 (PFAS subset: 35)](https://img.shields.io/badge/Claims-~95_total_(35_PFAS)-blue)
-![DFT Verified: 15/15](https://img.shields.io/badge/DFT_Verified-15%2F15-success)
+![Binding Estimates: 15/15](https://img.shields.io/badge/Binding_Estimates-15%2F15-success)
 ![Lead Binding: -121 kJ/mol](https://img.shields.io/badge/Lead_Binding--121_kJ%2Fmol-critical)
 ![Scaffold Library: 730](https://img.shields.io/badge/Scaffold_Library-730-informational)
 ![Industry: Water Treatment / Environmental Remediation](https://img.shields.io/badge/Industry-Water_Treatment-orange)
@@ -12,7 +12,7 @@
 **Last Updated:** February 18, 2026
 **Status:** Non-Confidential Disclosure
 **Patent Status:** U.S. Provisional Application Filed January 2026
-**Theory Level:** B3LYP/6-31G*/D3(BJ)/CPCM -- 30 DFT calculations across 15 candidates and 2 PFAS targets
+**Theory Level:** Analytical Coulomb+LJ+Born model calibrated against 2 CP2K anchor points -- 30 binding energy estimates across 15 candidates and 2 PFAS targets (labeled as B3LYP/6-31G* in output files but actually physics-model estimates; see HONEST_DISCLOSURES.md)
 
 ---
 

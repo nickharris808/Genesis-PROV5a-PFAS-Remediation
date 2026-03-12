@@ -15,8 +15,8 @@ The following claim families from the PROV 5 Smart Matter provisional patent are
 ### Family 2: Fluorocatchers for PFAS Remediation (Claims 16-28)
 
 **Type:** Composition of Matter
-**Strength:** STRONG (15/15 PFAS DFT complete)
-**Evidence Base:** 15 verified DFT calculations at B3LYP/6-31G*/D3BJ/CPCM
+**Strength:** STRONG (15/15 PFAS binding estimates complete)
+**Evidence Base:** 15 analytical Coulomb+LJ+Born binding energy estimates calibrated against 2 CP2K anchor points (not DFT -- see HONEST_DISCLOSURES.md)
 
 | Claim | Scope | Type |
 |-------|-------|------|
