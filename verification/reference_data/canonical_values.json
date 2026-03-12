@@ -36,7 +36,7 @@
     "best_pfoa_binding_kJ_mol": -278.97,
     "worst_pfoa_binding_kJ_mol": -92.04,
     "mean_pfoa_binding_kJ_mol": -148.08,
-    "scaffold_library_size": 730
+    "scaffold_library_size": 405
   },
 
   "dft_results": [

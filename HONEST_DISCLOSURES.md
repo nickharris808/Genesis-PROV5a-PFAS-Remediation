@@ -11,7 +11,7 @@ Every binding energy, isotherm prediction, regeneration estimate, and performanc
 
 Specifically:
 
-- **No Fluorocatcher molecules have been synthesized.** The 730 scaffolds and 15 computationally-estimated candidates exist only as computational models.
+- **No Fluorocatcher molecules have been synthesized.** The 405 scaffolds (in `expanded_candidates.sdf`) and 15 computationally-estimated candidates exist only as computational models.
 - **No experimental binding isotherms have been measured.** The Langmuir isotherm analysis (K_bind = 10^17 L/mol) is computed from analytical binding energy estimates using standard thermodynamic relationships, not from experimental adsorption data.
 - **No filtration tests have been conducted.** No water has been passed through any Fluorocatcher-based filter medium. Claims about EPA MCL compliance at 4 ppt are thermodynamic predictions, not measured performance.
 - **No pilot-scale or field tests exist.** The application scenarios described (municipal water treatment, DoD site remediation, industrial PFAS capture) are projected use cases based on computed performance, not demonstrated installations.
@@ -68,9 +68,9 @@ The regeneration model (98.5% capacity retention per cycle, >200 cycle lifetime)
 
 ---
 
-## 4. The 730 Scaffolds Are Computationally Designed, Not Synthesized
+## 4. The 405 Scaffolds Are Computationally Designed, Not Synthesized
 
-The 730-scaffold library was generated through combinatorial enumeration of molecular building blocks:
+The 405-scaffold expanded library (`expanded_candidates.sdf`) was generated through combinatorial enumeration of molecular building blocks:
 - 4 cation types
 - Multiple spacer lengths
 - Multiple fluorination levels
@@ -78,7 +78,7 @@ The 730-scaffold library was generated through combinatorial enumeration of mole
 
 These scaffolds are data structures in a computational library. None have been synthesized. Importantly:
 
-- **Synthetic accessibility has not been individually assessed** for all 730 scaffolds. Some may be synthetically challenging or impractical.
+- **Synthetic accessibility has not been individually assessed** for all 405 scaffolds. Some may be synthetically challenging or impractical.
 - **Stability in aqueous solution** has not been modeled for all scaffolds. Some cation types (e.g., iminium) may be hydrolytically unstable at neutral pH.
 - **Toxicity has not been assessed.** Fluorinated molecules can themselves be environmentally problematic. The irony of using fluorinated sorbents to capture fluorinated pollutants is noted. Any commercialization path must include environmental fate assessment of the Fluorocatcher molecules themselves.
 
@@ -131,7 +131,7 @@ The $20-40 billion PFAS remediation market estimate and $50 billion+ municipal c
 |----------|-----------------|
 | Fluorocatchers computationally bind PFAS 2-6x stronger than GAC | Fluorocatchers have been experimentally proven to capture PFAS |
 | 15/15 analytical binding estimates exceed -80 kJ/mol (only 2 are actual DFT) | Binding energies are accurate to chemical accuracy |
-| 730 scaffolds computationally designed | 730 scaffolds synthesized or tested |
+| 405 scaffolds computationally designed | 405 scaffolds synthesized or tested |
 | Irreversibility ratio > 1.5 for lead compound | Permanent capture demonstrated in filtration test |
 | Compatible design with existing infrastructure | Drop-in replacement tested in actual water treatment plant |
 | Thermodynamic advantage at 4 ppt concentrations | Measured performance at 4 ppt PFOA/PFOS |
