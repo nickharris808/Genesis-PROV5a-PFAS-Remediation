@@ -10,7 +10,7 @@
 
 Before reviewing claim families, the following assets have been independently verified:
 
-1. **58 verified CP2K DFT calculations** with cloud provenance (Inductiva task IDs). These compute binding energies for Janus Ligand-metal complexes at the PBE/DZVP-MOLOPT-PBE-GTH level with D3 dispersion. All 58 converged and are forensically auditable.
+1. **58 verified CP2K DFT calculations** with cloud provenance (Inductiva task IDs). These compute binding energies for Janus Ligand-metal complexes at the PBE/DZVP-MOLOPT-SR-GTH level (no dispersion correction applied). All 58 converged and are forensically auditable.
 2. **Kremser separation framework** with 18-point sensitivity analysis. The Kremser equation is rigorous first-principles thermodynamics (not an empirical fit). The sensitivity sweep shows defensible CapEx reduction of 20-40% depending on practical correction factor.
 3. **405 RDKit-generated scaffolds** in SDF format (`expanded_candidates.sdf`), all validated with 3D coordinates and chemical sanitization.
 4. **Analytical Born model for pore selectivity screening** -- correct continuum electrostatics for ion dehydration barriers. Produces physically meaningful Li+/Na+ selectivity predictions.
